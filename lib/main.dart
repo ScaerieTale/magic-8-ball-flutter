@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -31,6 +31,17 @@ class _Body8BallState extends State<Body8Ball> {
   @override
   int answer = 1;
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: TextButton(
+        onPressed: () {
+          setState(
+            () {
+              answer = Random().nextInt(4) + 1;
+            },
+          );
+        },
+        child: Image.asset('images/ball$answer.png'),
+      ),
+    );
   }
 }
